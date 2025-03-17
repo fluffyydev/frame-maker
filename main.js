@@ -1,5 +1,5 @@
-const canvas = document.getElementById('gameCanvas');
-const context = canvas.getContext('2d');
+const canvas = document.getElementById('theCanvas');
+const ctx = canvas.getContext('2d');
 
 canvas.fillStyle = 'white';
 
@@ -9,7 +9,6 @@ context.fillText('helo', 50, 300);
 
 // Function taken from W3Schools .. I added scalability
 function draw(length) {
-    const ctx = document.getElementById("gameCanvas").getContext("2d");
     for (let i = 0; i < length; i++) {
         for (let j = 0; j < length; j++) {
             ctx.fillStyle = `rgb(${Math.floor(255 - (255 / length) * i)} ${Math.floor( 255 - (255 / length) * j,)} 255)`;
