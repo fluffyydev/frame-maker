@@ -1,12 +1,10 @@
 body {
     background-color: #1c1c26;
-    position
 }
 
 .topDiv {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 3px solid rgb(162, 248, 162);
     padding: 10px;
-    
 }
