@@ -3,7 +3,8 @@ canvas.fillStyle = 'white';
 
 // Sliders and Buttons
 var rSlider = document.getElementById("rRange")
-var cSlider = document.getElementById("cRange")
+var gSlider = document.getElementById("gRange")
+var bSlider = document.getElementById("bRange")
 
 // Function taken from W3Schools - I added scalability
 function draw(length, pixelSize) {
@@ -18,7 +19,7 @@ function draw(length, pixelSize) {
           rNum = rSlider.value;
         }
         if (true) {
-          bNum = rSlider.value;
+          gNum = gSlider.value;
         }
         if (true) {
           cNum = rSlider.value;
@@ -53,7 +54,7 @@ rSlider.oninput = function() {
   draw(250, 1);
 }
 
-bSlider.oninput = function() {
+gSlider.oninput = function() {
   const canvas = document.getElementById('theCanvas');
   const ctx = canvas.getContext("2d");
   // Clearing canvas 
