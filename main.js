@@ -28,18 +28,26 @@ function draw(length, pixelSize) {
           rNum = Math.floor(255 - (255 / length) * i)
         } else {
           rNum = rSlider.value;
-
         }
 
-        if (true) {
+        if (greenHueSelector.value == "left") {
+          gNum = Math.floor(255 - (255 / length) * j)
+        } else if (greenHueSelector.value == "down") {
+          gNum = Math.floor(255 - (255 / length) * i)
+        } else {
           gNum = gSlider.value;
         }
-        if (true) {
+          
+        if (blueHueSelector.value == "left") {
+          bNum = Math.floor(255 - (255 / length) * j)
+        } else if (blueHueSelector.value == "down") {
+          bNum = Math.floor(255 - (255 / length) * i)
+        } else {
           bNum = bSlider.value;
         }
         
         // Saving this for later:  Math.floor( 255 - (255 / length)
-        var rbgColor = "rgb(" + rNum + ", " + gNum + ", " + Math.floor(255 - (255 / length) * i) + ")";
+        var rbgColor = "rgb(" + rNum + ", " + gNum + ", " + bNum + ")";
         
         ctx.fillStyle = rbgColor;
         ctx.fillRect(j * pixelSize, i * pixelSize, pixelSize, pixelSize);
@@ -106,7 +114,14 @@ redHueSelector.oninput = function() {
   draw(pixelAmountSlider.value, pixelSizeSlider.value);
 }
 
-const slider = document.getElementById('rRange');
+greeneHueSelector.oninput = function() {
+  const canvas = document.getElementById('theCanvas');
+  const ctx = canvas.getContext("2d");
+  // Clearing canvas 
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  draw(pixelAmountSlider.value, pixelSizeSlider.value);
+}
 
 blueHueSelector.oninput = function() {
   const canvas = document.getElementById('theCanvas');
