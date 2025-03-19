@@ -3,6 +3,8 @@ canvas.fillStyle = 'white';
 
 // Sliders and Buttons
 var redHueSelector = document.getElementById("RDirection")
+var greenHueSelector = document.getElementById("gDirection")
+var blueHueSelector = document.getElementById("RDirection")
 
 var rSlider = document.getElementById("rRange")
 var gSlider = document.getElementById("gRange")
@@ -106,12 +108,11 @@ redHueSelector.oninput = function() {
 
 const slider = document.getElementById('rRange');
 
-slider.addEventListener('input', () => {
-    const value = slider.value;
-    const max = slider.max;
-    const progress = (value / max) * 100 + '%';
-    slider.style.setProperty('--progress', progress);
-});
+blueHueSelector.oninput = function() {
+  const canvas = document.getElementById('theCanvas');
+  const ctx = canvas.getContext("2d");
+  // Clearing canvas 
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// Initialize the progress on page load
-slider.style.setProperty('--progress', (slider.value / slider.max) * 100 + '%');
+  draw(pixelAmountSlider.value, pixelSizeSlider.value);
+}
