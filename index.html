@@ -8,10 +8,25 @@
 </head>
 <body>
     <div class="topDiv">
+        <label for="RDirection">Red Hue Color</label>
+        <select name="RDirection" id="RDirection">
+            <optgroup label="Automatic">
+              <option value="down">Down/Up</option>
+              <option value="left">Left/Right</option>
+              <option value="both">All</option>
+            </optgroup>
+            <optgroup label="Choice">
+              <option value="fixed">Fixed</option>
+            </optgroup>
+
         <button>Button</button>
-        <input type="range" min="1" max="255" value="255" class="slider" id="rRange"> 
-        <input type="range" min="1" max="255" value="255" class="slider" id="bRange">  
-        <input type="range" min="1" max="255" value="255" class="slider" id="cRange">
+        <input type="range" min="1" max="255" value="255"  class="slider" id="rRange"> 
+        <input type="range" min="1" max="255" value="255" class="slider" id="gRange">  
+        <input type="range" min="1" max="255" value="255" class="slider" id="bRange">
+    </div>
+    <div class="topDiv">
+        <input type="range" min="1" max="35" value="2" class="slider" id="pixelSizeRange">
+        <input type="range" min="5" max="250" value="150" class="slider" id="pixelAmountRange">
     </div>
     <canvas id="theCanvas" width="10000" height="1000"></canvas>
     <script src="main.js"></script>
