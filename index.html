@@ -8,16 +8,19 @@
 </head>
 <body>
     <div class="topDiv" id="mainDiv">
-        <label for="RDirection">Red Hue Color</label>
-        <select name="RDirection" id="RDirection">
-            <optgroup label="Automatic">
-              <option value="down">Down/Up</option>
-              <option value="left">Left/Right</option>
-            </optgroup>
-            <optgroup label="Choice">
-              <option value="fixed">Fixed</option>
-            </optgroup>
-        </select>
+        <div id="redDiv">
+            <label for="RDirection">Red Hue Color</label>
+            <select name="RDirection" id="RDirection">
+                <optgroup label="Automatic">
+                  <option value="down">Down/Up</option>
+                  <option value="left">Left/Right</option>
+                </optgroup>
+                <optgroup label="Choice">
+                  <option value="fixed">Fixed</option>
+                 </optgroup>
+            </select>
+        </div>
+        <div id="greenDiv">
         <label for="GDirection">Green Hue Color</label>
         <select name="GDirection" id="GDirection">
             <optgroup label="Automatic">
@@ -28,6 +31,8 @@
               <option value="fixed">Fixed</option>
             </optgroup>
         </select>
+        </div>
+        <div id="blueDiv">
         <label for="BDirection">Blue Hue Color</label>
         <select name="BDirection" id="BDirection">
             <optgroup label="Automatic">
@@ -38,7 +43,7 @@
               <option value="fixed">Fixed</option>
             </optgroup>
         </select>
-
+        </div>
         <button>Button</button>
         <input type="range" min="1" max="255" value="255"  class="slider" id="rRange"> 
         <input type="range" min="1" max="255" value="255" class="slider" id="gRange">  
