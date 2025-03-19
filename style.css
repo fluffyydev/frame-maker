@@ -15,28 +15,28 @@ label {
 
 #mainDiv {
     margin: auto;
-    width: 50%;
+    width: 75%;
     border: 3px solid rgb(255, 255, 255);
     padding: 5px;
 }
 
 #redDiv {
     margin: auto;
-    width: 50%;
+    width: 75%;
     border: 1px solid rgb(255, 0, 0);
-    padding: 5px;
+    padding:10px;
 }
 
 #greenDiv {
     margin: auto;
-    width: 50%;
+    width: 75%;
     border: 1px solid rgb(0, 255, 0);
-    padding: 4px;
+    padding: 10px;
 }
 
 #blueDiv {
     margin: auto;
-    width: 50%;
+    width: 75%;
     border: 1px solid rgb(0, 0, 255);
-    padding: 4px;
+    padding: 10px;
 }
