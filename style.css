@@ -12,3 +12,10 @@ label {
     border: 3px solid rgb(162, 248, 162);
     padding: 10px;
 }
+
+#colorDiv {
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(255, 255, 255);
+    padding: 10px;
+}
