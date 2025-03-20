@@ -134,12 +134,38 @@ randomFrameButton.oninput = function() {
   const ctx = canvas.getContext("2d");
   // Clearing canvas 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    var rNum = 255
+    var gNum = 255
+    var bNum = 255
+    
   if (getRandomInteger(1, 2) == 1) {
     var colorUsed = getRandomInteger(1, 3)
     if (colorUsed == 1) {
+      if (getRandomInteger(1, 2) == 1) {
+          redHueSelector.value = "down"
+          rSlider.hidden = true;
+      } else {
+          redHueSelector.value = "left"
+          rSlider.hidden = true;
+        } 
+    } else if (colorUsed == 2) {
+        if (getRandomInteger(1, 2) == 1) {
+          greenHueSelector.value = "down"
+        gSlider.hidden = true;
+      } else {
+          greenHueSelector.value = "left"
+        gSlider.hidden = true;
+      }
+    } else {
+        if (getRandomInteger(1, 2) == 1) {
+          blueHueSelector.value = "down"
+      bSlider.hidden = true;
+      } else {
+          blueHueSelector.value = "left"
+      bSlider.hidden = true;
+      }
+    } else 
       
-    }
   }
 
   draw(pixelAmountSlider.value, pixelSizeSlider.value);
