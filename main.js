@@ -122,11 +122,25 @@ blueHueSelector.oninput = function() {
   updateScreen()
 }
 
+// Thanks to goggle AI
+function getRandomInteger(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 randomFrameButton.oninput = function() {
   const canvas = document.getElementById('theCanvas');
   const ctx = canvas.getContext("2d");
   // Clearing canvas 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  if (getRandomInteger(1, 2) == 1) {
+    var colorUsed = getRandomInteger(1, 3)
+    if (colorUsed == 1) {
+      
+    }
+  }
 
   draw(pixelAmountSlider.value, pixelSizeSlider.value);
 }
