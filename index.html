@@ -5,25 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frame Maker</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
     <div class="topDiv" id="mainDiv">
         <div id="redDiv">
-            <label for="RDirection">Red Hue Color</label>
-            <select name="RDirection" id="RDirection">
-                <optgroup label="Automatic">
-                  <option value="down">Down/Up</option>
-                  <option value="left">Left/Right</option>
-                </optgroup>
-                <optgroup label="Choice">
-                  <option value="fixed">Fixed</option>
-                 </optgroup>
-            </select>
-          <input type="range" min="1" max="255" value="255"  class="slider" id="rRange"> 
-        </div>
-        <div id="greenDiv">
-        <label for="GDirection">Green Hue Color</label>
-        <select name="GDirection" id="GDirection">
+          <label for="RDirection">Red Hue Color</label>
+          <select name="RDirection" id="RDirection">
             <optgroup label="Automatic">
               <option value="down">Down/Up</option>
               <option value="left">Left/Right</option>
@@ -31,9 +19,24 @@
             <optgroup label="Choice">
               <option value="fixed">Fixed</option>
             </optgroup>
-        </select>
+          </select>
+          <input type="range" min="1" max="255" value="255"  class="slider" id="rRange"> 
+        </div>
+        <br>
+        <div id="greenDiv">
+        <label for="GDirection">Green Hue Color</label>
+          <select name="GDirection" id="GDirection">
+            <optgroup label="Automatic">
+              <option value="down">Down/Up</option>
+              <option value="left">Left/Right</option>
+            </optgroup>
+            <optgroup label="Choice">
+              <option value="fixed">Fixed</option>
+            </optgroup>
+          </select>
           <input type="range" min="1" max="255" value="255" class="slider" id="gRange"> 
         </div>
+        <br>
         <div id="blueDiv">
         <label for="BDirection">Blue Hue Color</label>
         <select name="BDirection" id="BDirection">
@@ -47,14 +50,27 @@
         </select>
           <input type="range" min="1" max="255" value="255" class="slider" id="bRange">
         </div>
-        <button>Button</button>
+        <button id="randomButton">Random Frame</button>
     </div>
     <div class="topDiv">
-      <p>Sizing</p>
-        <input type="range" min="1" max="35" value="2" class="slider" id="pixelSizeRange">
-        <input type="range" min="5" max="250" value="150" class="slider" id="pixelAmountRange">
-    </div>
-    <canvas id="theCanvas" width="10000" height="1000"></canvas>
+      <h2>Sizing</h2>
+        <label for="pixelSizeRange">Box Size</label>
+        <input type="range" min="1" max="35" value="3" class="slider" id="pixelSizeRange">
+        <input type="number" min="1" max="35" value="3" id="pixelSizeType">
+
+        <br>
+        
+        <label for="pixelAmountRange">Box Amount Y</label>
+        <input type="range" min="5" max="250" value="100" class="slider" id="pixelAmountRange">
+        <input type="number" min="5" max="250" value="100" id="pixleAmountY">
+
+        <br>
+        
+        <label for="pixelAmountRange">Box Amount X</label>
+        <input type="range" min="5" max="250" value="100" class="slider" id="pixelAmountRange2">
+        <input type="number" min="5" max="250" value="100" id="pixleAmountX">
+      </div>
+    <canvas id="theCanvas" width="1000" height="1000" ></canvas>
     <script src="main.js"></script>
 </body>
 </html>
