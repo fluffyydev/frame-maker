@@ -129,10 +129,6 @@ blueHueSelector.oninput = function() {
   updateScreen()
 }
 
-//var pixelSizeType = document.getElementById("pixelSizeType")
-//var XSizeType = document.getElementById("pixelAmountX")
-//var YSizeType = document.getElementById("pixelAmountY")
-
 pixelSizeType.oninput = function() {
   pixelSizeSlider.value = pixelSizeType.value
   updateScreen();
@@ -148,7 +144,7 @@ YSizeType.oninput = function() {
   updateScreen();
 }
 
-// Thanks to goggle AI
+// Thanks to goggle AI - too lazy to make this function
 function getRandomInteger(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
