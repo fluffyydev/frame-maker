@@ -6,6 +6,10 @@ label {
     color: white;
 }
 
+p {
+    color: white;
+}
+
 .topDiv {
     margin: auto;
     width: 50%;
