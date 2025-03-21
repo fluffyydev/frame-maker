@@ -17,6 +17,10 @@ var pixelSizeSlider = document.getElementById("pixelSizeRange");
 var pixelAmountSlider = document.getElementById("pixelAmountRange");
 var pixelAmountSlider2 = document.getElementById("pixelAmountRange2");
 
+var pixelSizeType = document.getElementById("pixelSizeType")
+var XSizeType = document.getElementById("pixelAmountX")
+var YSizeType = document.getElementById("pixelAmountY")
+
 var randomFrameButton = document.getElementById("randomButton");
 
 // Function taken from W3Schools - I added scalability
@@ -99,14 +103,17 @@ bSlider.oninput = function() {
 }
 
 pixelSizeSlider.oninput = function() {
+  pixelSizeType.value = pixelSizeSlider.value
   updateScreen()
 }
 
 pixelAmountSlider.oninput = function() {
+  YSizeType.value = pixelAmountSlider.value
   updateScreen()
 }
 
 pixelAmountSlider2.oninput = function() {
+  XSizeType.value = pixelAmountSlider2.value
   updateScreen()
 }
 
@@ -122,6 +129,25 @@ blueHueSelector.oninput = function() {
   updateScreen()
 }
 
+//var pixelSizeType = document.getElementById("pixelSizeType")
+//var XSizeType = document.getElementById("pixelAmountX")
+//var YSizeType = document.getElementById("pixelAmountY")
+
+pixelSizeType.oninput = function() {
+  pixelSizeSlider.value = pixelSizeType.value
+  updateScreen();
+}
+
+XSizeType.oninput = function() {
+  pixelAmountSlider2.value = XSizeType.value
+  updateScreen();
+}
+
+YSizeType.oninput = function() {
+  pixelAmountSlider.value = YSizeType.value
+  updateScreen();
+}
+
 // Thanks to goggle AI
 function getRandomInteger(min, max) {
   min = Math.ceil(min);
@@ -129,44 +155,93 @@ function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-randomFrameButton.oninput = function() {
+randomFrameButton.onclick = function() {
   const canvas = document.getElementById('theCanvas');
   const ctx = canvas.getContext("2d");
-  // Clearing canvas 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-    var rNum = 255
-    var gNum = 255
-    var bNum = 255
     
   if (getRandomInteger(1, 2) == 1) {
-    var colorUsed = getRandomInteger(1, 3)
+    var colorUsed = getRandomInteger(1, 3);
     if (colorUsed == 1) {
       if (getRandomInteger(1, 2) == 1) {
-          redHueSelector.value = "down"
-          rSlider.hidden = true;
+        redHueSelector.value = "down";
+        rSlider.hidden = true;
+        blueHueSelector.value = "fixed";
+        greenHueSelector.value = "fixed";
+        bSlider.hidden = false;
+        bSlider.value = getRandomInteger(0, 255);
+        gSlider.hidden = false;
+        gSlider.value = getRandomInteger(0, 255);
       } else {
-          redHueSelector.value = "left"
-          rSlider.hidden = true;
-        } 
+        redHueSelector.value = "left";
+        rSlider.hidden = true;
+        blueHueSelector.value = "fixed";
+        greenHueSelector.value = "fixed";
+        bSlider.hidden = false;
+        bSlider.value = getRandomInteger(0, 255);
+        gSlider.hidden = false;
+        gSlider.value = getRandomInteger(0, 255);
+      } 
     } else if (colorUsed == 2) {
-        if (getRandomInteger(1, 2) == 1) {
-          greenHueSelector.value = "down"
+      if (getRandomInteger(1, 2) == 1) {
+        greenHueSelector.value = "down";
         gSlider.hidden = true;
+        blueHueSelector.value = "fixed";
+        redHueSelector.value = "fixed";
+        bSlider.hidden = false;
+        bSlider.value = getRandomInteger(0, 255);
+        rSlider.hidden = false;
+        rSlider.value = getRandomInteger(0, 255);
       } else {
-          greenHueSelector.value = "left"
+        greenHueSelector.value = "left";
         gSlider.hidden = true;
+        blueHueSelector.value = "fixed";
+        redHueSelector.value = "fixed";
+        bSlider.hidden = false;
+        bSlider.value = getRandomInteger(0, 255);
+        rSlider.hidden = false;
+        rSlider.value = getRandomInteger(0, 255);
       }
     } else {
-        if (getRandomInteger(1, 2) == 1) {
-          blueHueSelector.value = "down"
-      bSlider.hidden = true;
+      if (getRandomInteger(1, 2) == 1) {
+        blueHueSelector.value = "down";
+        bSlider.hidden = true;
+        redHueSelector.value = "fixed";
+        greenHueSelector.value = "fixed";
+        gSlider.hidden = false;
+        gSlider.value = getRandomInteger(0, 255);
+        rSlider.hidden = false;
+        rSlider.value = getRandomInteger(0, 255);
       } else {
-          blueHueSelector.value = "left"
-      bSlider.hidden = true;
+        blueHueSelector.value = "left";
+        bSlider.hidden = true;
+        redHueSelector.value = "fixed";
+        greenHueSelector.value = "fixed";
+        gSlider.hidden = false;
+        gSlider.value = getRandomInteger(0, 255);
+        rSlider.hidden = false;
+        rSlider.value = getRandomInteger(0, 255);
       }
-    } else 
+    }
       
+  } else {
+    if (getRandomInteger(1, 2) == 1) {
+      blueHueSelector.value = "down";
+      bSlider.hidden = true;
+    } else {
+      blueHueSelector.value = "left";
+      bSlider.hidden = true;
+    }
+    if (getRandomInteger(1, 2) == 1) {
+      redHueSelector.value = "down";
+      rSlider.hidden = true;
+    } else {
+      redHueSelector.value = "left";
+      rSlider.hidden = true;
+    }
+    greenHueSelector.value = "fixed";
+    gSlider.hidden = false;
+    bSlider.value = getRandomInteger(0, 255);
   }
 
-  draw(pixelAmountSlider.value, pixelSizeSlider.value);
+  updateScreen();
 }
