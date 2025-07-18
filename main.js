@@ -25,6 +25,8 @@ var randomFrameButton = document.getElementById("randomButton");
 
 // Function taken from W3Schools - I added scalability
 function draw(length, pixelSize) {
+  canvas.width = XSizeType.value * pixelSizeType.value;
+  canvas.height = YSizeType.value * pixelSizeType.value;
     var length2 = pixelAmountSlider2.value;
     const ctx = document.getElementById('theCanvas').getContext("2d");
     for (let i = 0; i < length; i++) {
@@ -81,8 +83,6 @@ function updateScreen() {
   const ctx = canvas.getContext("2d");
   // Clearing canvas 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  canvas.width = pixelAmountSlider2.value * pixelSizeSlider.value;
-  canvas.height = pixelAmountSlider.value * pixelSizeSlider.value;
 
   draw(pixelAmountSlider.value, pixelSizeSlider.value);
 }
@@ -144,7 +144,7 @@ YSizeType.oninput = function() {
   updateScreen();
 }
 
-// Thanks to goggle AI - too lazy to make this function
+// Thanks to goggle AI
 function getRandomInteger(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
